@@ -1,2 +1,1 @@
-# mojtest
-temp repo
+Do a 'vagrant up' - all steps proceed automatically from this.

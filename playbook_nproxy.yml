@@ -1,0 +1,16 @@
+- hosts: all
+  tasks:
+  - name: install nginx
+    apt: name=nginx state=latest
+
+  - name: configure nginx
+    template: src=templates/nginx.default dest=/etc/nginx/sites-available/default
+    notify:
+    - restart nginx
+
+  - name: configure sudoers
+    template: src=templates/sudoers dest=/etc/sudoers owner=root mode=0440
+    
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted

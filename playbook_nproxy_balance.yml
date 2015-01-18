@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+    - name: remove nginx default conf
+      file: path=/etc/nginx/sites-enabled/default state=absent
+  
+    - name: configure nginx
+      template: src=templates/nginx.balance dest=/etc/nginx/nginx.conf
+      notify:
+      - restart nginx
+    
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted

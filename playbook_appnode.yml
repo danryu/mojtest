@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+  - name: install nodejs for basic webapp
+    apt: name=nodejs state=present
+
+  - name: install nodejs file
+    template: src=templates/hello.js dest=/root/hello.js
+
+  - name: run nodejs server
+    shell: nodejs /root/hello.js &

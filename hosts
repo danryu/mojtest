@@ -1,0 +1,6 @@
+[proxynodes]
+nproxy
+
+[appnodes]
+node1
+node2
