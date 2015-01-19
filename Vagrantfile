@@ -55,7 +55,7 @@ SCRIPT
     
     # install basic nginx load balancing config
     nproxy.vm.provision "shell",
-      inline: "ansible-pull -U https://github.com/danryu/moj.git -i hosts playbook_nproxy_balance.yml"
+      inline: "ansible-pull -U https://github.com/danryu/mojtest.git -i hosts playbook_nproxy_balance.yml"
     
     # test nginx load balancer response
     nproxy.vm.provision "shell",
