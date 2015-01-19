@@ -27,7 +27,7 @@ SCRIPT
     
     # create Nodejs hello world app
     node1.vm.provision "shell",
-      inline: "ansible-pull -U https://github.com/danryu/moj.git -i hosts playbook_appnode.yml"
+      inline: "ansible-pull -U https://github.com/danryu/mojtest.git -i hosts playbook_appnode.yml"
   end
 
   config.vm.define "node2" do |node2|
@@ -37,7 +37,7 @@ SCRIPT
 
 	# create Nodejs hello world app    
     node2.vm.provision "shell",
-      inline: "ansible-pull -U https://github.com/danryu/moj.git -i hosts playbook_appnode.yml"
+      inline: "ansible-pull -U https://github.com/danryu/mojtest.git -i hosts playbook_appnode.yml"
   end
 
   config.vm.define "nproxy" do |nproxy|
@@ -47,7 +47,7 @@ SCRIPT
     
     # install default nginx
     nproxy.vm.provision "shell",
-      inline: "ansible-pull -U https://github.com/danryu/moj.git -i hosts playbook_nproxy.yml"
+      inline: "ansible-pull -U https://github.com/danryu/mojtest.git -i hosts playbook_nproxy.yml"
     
     # test default nginx response
     nproxy.vm.provision "shell",
